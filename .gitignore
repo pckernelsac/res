@@ -1,0 +1,19 @@
+# Composer / PHP
+/vendor/
+composer.phar
+
+# Entorno local (no subir secretos)
+.env
+.env.*
+!.env.example
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs y caché local
+*.log
+.phpunit.result.cache

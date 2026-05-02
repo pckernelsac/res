@@ -1,0 +1,9 @@
+.git
+.gitignore
+.cursor
+*.md
+.DS_Store
+Thumbs.db
+**/.env
+**/.env.*
+terminals
