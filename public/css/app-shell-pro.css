@@ -1,19 +1,19 @@
 /**
  * Shell profesional: header, sidebar y pie (carga después del tema blue.css).
- * Paleta alineada con Monster Admin blue: #1e88e5, #26c6da.
+ * Paleta alineada con insaga.css: #21388B.
  */
 :root {
 	--shell-bg: #f0f4f8;
 	--shell-sidebar: #152a45;
 	--shell-sidebar-hover: #1c3554;
-	--shell-sidebar-active: #1e88e5;
+	--shell-sidebar-active: #21388b;
 	--shell-sidebar-text: rgba(255, 255, 255, 0.9);
 	--shell-sidebar-muted: rgba(255, 255, 255, 0.58);
-	--shell-topbar: #1e88e5;
-	--shell-topbar-header: rgba(0, 0, 0, 0.1);
-	--shell-header-border: rgba(13, 71, 161, 0.2);
-	--shell-accent: #1e88e5;
-	--shell-accent-cyan: #26c6da;
+	--shell-topbar: #21388b;
+	--shell-topbar-header: rgba(0, 0, 0, 0.12);
+	--shell-header-border: rgba(33, 56, 139, 0.35);
+	--shell-accent: #21388b;
+	--shell-accent-cyan: #5c9eff;
 	--shell-shadow: 0 1px 3px rgba(21, 42, 69, 0.12);
 	--shell-radius: 10px;
 }
@@ -75,7 +75,7 @@ body#card1.app-shell .sidebar-nav ul ul.collapse.in {
 	display: block !important;
 }
 
-/* ——— Topbar (coherente con blue.css: barra azul, enlaces blancos) ——— */
+/* ——— Topbar (insaga: barra #21388B, enlaces blancos) ——— */
 body#card1.app-shell .topbar {
 	position: relative;
 	z-index: 1030;
@@ -155,7 +155,7 @@ body#card1.app-shell .left-sidebar {
 }
 
 body#card1.app-shell .left-sidebar .user-profile {
-	background: linear-gradient(160deg, #1e88e5 0%, #1565c0 45%, #152a45 100%) !important;
+	background: linear-gradient(160deg, #21388b 0%, #1a2d6e 45%, #152a45 100%) !important;
 	background-size: cover !important;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 	padding: 1.25rem 1rem 1rem;
@@ -208,7 +208,7 @@ body#card1.app-shell .sidebar-nav ul li a:focus {
 
 body#card1.app-shell .sidebar-nav ul li.active > a,
 body#card1.app-shell .sidebar-nav ul li > a.active {
-	background: rgba(30, 136, 229, 0.35) !important;
+	background: rgba(33, 56, 139, 0.4) !important;
 	color: #fff !important;
 	border-left: 3px solid var(--shell-accent-cyan);
 	padding-left: calc(0.85rem - 3px) !important;
@@ -311,7 +311,7 @@ body#card1.app-shell .app-shell-footer {
 .app-shell-footer-brand {
 	font-weight: 600;
 	font-size: 0.8125rem;
-	color: #1565c0;
+	color: #21388b;
 	letter-spacing: 0.02em;
 }
 

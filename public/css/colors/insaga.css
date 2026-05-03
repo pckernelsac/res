@@ -65,11 +65,11 @@ File: scss
 /*General Elements
 *******************/
 a.link:hover, a.link:focus {
-  color: #21388B; !important;
+  color: #21388B !important;
 }
 
 .bg-theme {
-  background-color: #21388B; !important;
+  background-color: #21388B !important;
 }
 
 .pagination > .active > a,
@@ -93,7 +93,7 @@ a.link:hover, a.link:focus {
 }
 
 .text-themecolor {
-  color: #21388B; !important;
+  color: #21388B !important;
 }
 
 .profile-tab li a.nav-link.active,
@@ -156,7 +156,7 @@ a.link:hover, a.link:focus {
 
 .sidebar-nav > ul > li.active > a, .sidebar-nav > ul > li.active:hover > a {
   color: #ffffff !important;
-  background: #21388B; !important;
+  background: #21388B !important;
 }
 
 .sidebar-nav > ul > li.active > a i, .sidebar-nav > ul > li.active:hover > a i {

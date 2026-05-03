@@ -210,10 +210,8 @@ function mayusPrimera(string){
 
 function changeThemeColor() {
     var metaThemeColor = document.querySelector("meta[name=theme-color]");
-    metaThemeColor.setAttribute("content", "#444");
-    setTimeout(function() {
-        changeThemeColor();
-    }, 3000);
+    if (!metaThemeColor) return;
+    metaThemeColor.setAttribute("content", "#21388B");
 }
 
 var getUrlParameter = function getUrlParameter(sParam) {
