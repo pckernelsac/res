@@ -1,11 +1,21 @@
     <?php if (Session::get('loggedIn') == true):?>
     </div>
-    <!-- <footer class="footer">
-        #BRAINPOS - Sistema Control de Procesos
-        <?php if(Session::get('rol') == 5) { ?>
-        <br><a href="<?php echo URL; ?>tablero/logout" class="text-danger"><i class="ti-power-off"></i> Cerrar sesi&oacute;n</a>
-        <?php } ?>
-    </footer> -->
+    <footer class="app-shell-footer" role="contentinfo">
+        <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center">
+            <div>
+                <span class="app-shell-footer-brand"><?php echo htmlspecialchars(NAME_NEGOCIO, ENT_QUOTES, 'UTF-8'); ?></span>
+                <span class="app-shell-footer-sep">·</span>
+                <span class="app-shell-footer-meta">BRAIN POS</span>
+            </div>
+            <div class="app-shell-footer-meta">
+                &copy; <?php echo date('Y'); ?>
+                <?php if (Session::get('rol') == 5): ?>
+                <span class="app-shell-footer-sep">·</span>
+                <a href="<?php echo URL; ?>tablero/logout" class="text-danger">Cerrar sesi&oacute;n</a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </footer>
 
 </div>
 <?php endif; ?>

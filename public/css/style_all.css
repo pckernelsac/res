@@ -269,8 +269,12 @@ html body .m-t-17i {
 @media (min-width: 1200px) { 
   .p-w-t {
     width: 15.48% !important;}
+  /* overflow:hidden recortaba botones y opciones del POS en pantallas grandes */
   .body-pos {
-    overflow:hidden;}
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+  }
   .btn-up, .btn-down, .btn-categ {
     display: none;
   } 

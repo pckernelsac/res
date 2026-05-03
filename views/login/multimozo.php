@@ -29,17 +29,17 @@
 							<input type="hidden" name="password" id="f-pass" value="">
 							<input type="password" name="usuario" id="f-user" class="auth-pin-display" value="" autocomplete="off" required aria-label="C&oacute;digo ingresado">
 							<div class="auth-keypad virtual-keyboard">
-								<button type="button" class="btn btn-auth-key" data="1" aria-label="1">1</button>
-								<button type="button" class="btn btn-auth-key" data="2" aria-label="2">2</button>
-								<button type="button" class="btn btn-auth-key" data="3" aria-label="3">3</button>
-								<button type="button" class="btn btn-auth-key" data="4" aria-label="4">4</button>
-								<button type="button" class="btn btn-auth-key" data="5" aria-label="5">5</button>
-								<button type="button" class="btn btn-auth-key" data="6" aria-label="6">6</button>
-								<button type="button" class="btn btn-auth-key" data="7" aria-label="7">7</button>
-								<button type="button" class="btn btn-auth-key" data="8" aria-label="8">8</button>
-								<button type="button" class="btn btn-auth-key" data="9" aria-label="9">9</button>
-								<button type="button" class="btn btn-auth-key" data="0" aria-label="0">0</button>
-								<button type="button" class="btn btn-auth-key auth-key-wide" data="DEL" aria-label="Borrar">
+								<button type="button" class="btn btn-auth-key" data-key="1" aria-label="1">1</button>
+								<button type="button" class="btn btn-auth-key" data-key="2" aria-label="2">2</button>
+								<button type="button" class="btn btn-auth-key" data-key="3" aria-label="3">3</button>
+								<button type="button" class="btn btn-auth-key" data-key="4" aria-label="4">4</button>
+								<button type="button" class="btn btn-auth-key" data-key="5" aria-label="5">5</button>
+								<button type="button" class="btn btn-auth-key" data-key="6" aria-label="6">6</button>
+								<button type="button" class="btn btn-auth-key" data-key="7" aria-label="7">7</button>
+								<button type="button" class="btn btn-auth-key" data-key="8" aria-label="8">8</button>
+								<button type="button" class="btn btn-auth-key" data-key="9" aria-label="9">9</button>
+								<button type="button" class="btn btn-auth-key" data-key="0" aria-label="0">0</button>
+								<button type="button" class="btn btn-auth-key auth-key-wide" data-key="DEL" aria-label="Borrar">
 									<i class="fas fa-backspace" aria-hidden="true"></i> Borrar
 								</button>
 							</div>
