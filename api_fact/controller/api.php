@@ -5,9 +5,11 @@ require_once 'api_fact/model/api.php';
 
 class ApiSunat
 {
-    public function __construct() {
-        $this->db = new Database(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_CHARSET);
-    }
+	public Database $db;
+
+	public function __construct() {
+		$this->db = new Database(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_CHARSET);
+	}
 
     public function sendDocSunaht($cod_ven,$num) {
 

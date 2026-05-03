@@ -13,6 +13,8 @@
 //------    PHP Version 4.3.1 o mayores (aunque podría funcionar en versiones anteriores, tendrías que probar)
 function numtoletras($xcifra)
 {
+    $xcifra = $xcifra ?? '';
+    $xcifra = is_scalar($xcifra) ? (string) $xcifra : '';
     $xarray = array(0 => "Cero",
         1 => "UN", "DOS", "TRES", "CUATRO", "CINCO", "SEIS", "SIETE", "OCHO", "NUEVE",
         "DIEZ", "ONCE", "DOCE", "TRECE", "CATORCE", "QUINCE", "DIECISEIS", "DIECISIETE", "DIECIOCHO", "DIECINUEVE",

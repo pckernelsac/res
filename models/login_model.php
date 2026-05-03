@@ -11,9 +11,11 @@ class Login_Model extends Model
 	{
 		$du = $this->db->prepare("SELECT * FROM tm_usuario WHERE 
 				usuario = :usuario AND contrasena = :password AND estado = 'a'");
+		$usuario = isset($_POST['usuario']) ? (string) $_POST['usuario'] : '';
+		$password = isset($_POST['password']) ? (string) $_POST['password'] : '';
 		$du->execute(array(
-			':usuario' => $_POST['usuario'],
-			':password' => base64_encode($_POST['password'])
+			':usuario' => $usuario,
+			':password' => base64_encode($password)
 		));
 		
 		$data_u = $du->fetch();

@@ -35,7 +35,7 @@ $appUrl = getenv('APP_URL');
 if ($appUrl !== false && $appUrl !== '') {
 	$appUrl = rtrim($appUrl, '/') . '/';
 } else {
-	$appUrl = 'http://localhost/ventacodigorestaurante/';
+	$appUrl = 'https://restaurante-app-restaurante.bx4rvs.easypanel.host/';
 }
 define('URL', $appUrl);
 define('LIBS', 'libs/');

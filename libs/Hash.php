@@ -9,7 +9,7 @@ class Hash
 	 * @param string $salt (This should be the same throughout the system probably)
 	 * @return string The hash/salted data
 	 */
-	public static function create($algo, $data, $salt)
+	public static function create(string $algo, string $data, string $salt): string
 	{
 		$context = hash_init($algo, HASH_HMAC, $salt);
 		hash_update($context, $data);

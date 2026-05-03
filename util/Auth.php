@@ -5,7 +5,7 @@ class Auth
 	public static function handleLogin()
 	{
 		@session_start();
-		$logged = $_SESSION['loggedIn'];
+		$logged = $_SESSION['loggedIn'] ?? false;
 		if ($logged == false)
 		{
 			session_destroy();

@@ -85,7 +85,7 @@ if($this->dato->id_tdoc == 1 || $this->dato->id_tdoc == 2){
 	$pdf->SetFont('Helvetica','',12);
 	$pdf->Cell(72,4,utf8_decode($this->empresa['raz_soc']),0,1,'C');
 	$pdf->SetFont('Helvetica','',8);
-	$pdf->Cell(72,4,utf8_decode(Session::get('tribAcr')).': '.utf8_decode($this->empresa['ruc']),0,1,'C');
+	$pdf->Cell(72,4,utf8_decode((string) (Session::get('tribAcr') ?? '')).': '.utf8_decode($this->empresa['ruc']),0,1,'C');
 	$pdf->MultiCell(72,4,utf8_decode($this->empresa['direccion']),0,'C');
 	$pdf->Cell(72,4,'TELF: '.utf8_decode($this->empresa['celular']),0,1,'C');
 	 
@@ -104,7 +104,7 @@ if($this->dato->id_tdoc == 1 || $this->dato->id_tdoc == 2){
 		$pdf->Cell(72,4,'TIPO DE ATENCION: Mostrador / Delivery',0,1,'');
 	}
 	$pdf->MultiCell(72,4,'CLIENTE: '.utf8_decode($this->dato->Cliente->nombre),0,1,'');
-	$pdf->Cell(72,4,utf8_decode(Session::get('diAcr')).'/'.utf8_decode(Session::get('tribAcr')).': '.utf8_decode($this->dato->Cliente->dni.''.$this->dato->Cliente->ruc),0,1,'');
+	$pdf->Cell(72,4,utf8_decode((string) (Session::get('diAcr') ?? '')).'/'.utf8_decode((string) (Session::get('tribAcr') ?? '')).': '.utf8_decode($this->dato->Cliente->dni.''.$this->dato->Cliente->ruc),0,1,'');
 	$pdf->MultiCell(72,4,'DIRECCION: '.utf8_decode($this->dato->Cliente->direccion),0,1,'');
 	 
 	// COLUMNAS

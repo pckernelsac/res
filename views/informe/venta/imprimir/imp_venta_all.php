@@ -46,7 +46,7 @@ $pdf->Cell(72,4,utf8_decode($this->empresa['razon_social']),0,1,'C');
 $pdf->Cell(72,4,utf8_decode($this->empresa['nombre_comercial']),0,1,'C');
 // $pdf->Cell(72,4,utf8_decode($url_logo),0,1,'C');
 $pdf->SetFont('Helvetica','',9);
-$pdf->Cell(72,4,utf8_decode(Session::get('tribAcr')).': '.utf8_decode($this->empresa['ruc']),0,1,'C');
+$pdf->Cell(72,4,utf8_decode((string) (Session::get('tribAcr') ?? '')).': '.utf8_decode($this->empresa['ruc']),0,1,'C');
 $pdf->MultiCell(72,4,utf8_decode($this->empresa['direccion_comercial']),0,'C');
 $pdf->Cell(72,4,'TELF: '.utf8_decode($this->empresa['celular']),0,1,'C');
  
@@ -68,9 +68,9 @@ if($this->dato->id_tped == 1){
 }
 $pdf->MultiCell(72,4,'CLIENTE: '.utf8_decode($this->dato->Cliente->nombre),0,1,'');
 if($this->dato->Cliente->tipo_cliente == 1){
-$pdf->Cell(72,4,utf8_decode(Session::get('diAcr')).': '.utf8_decode($this->dato->Cliente->dni),0,1,'');
+$pdf->Cell(72,4,utf8_decode((string) (Session::get('diAcr') ?? '')).': '.utf8_decode($this->dato->Cliente->dni),0,1,'');
 }else{
-$pdf->Cell(72,4,utf8_decode(Session::get('tribAcr')).': '.utf8_decode($this->dato->Cliente->ruc),0,1,'');
+$pdf->Cell(72,4,utf8_decode((string) (Session::get('tribAcr') ?? '')).': '.utf8_decode($this->dato->Cliente->ruc),0,1,'');
 }
 $pdf->MultiCell(72,4,'TELEFONO: '.utf8_decode($this->dato->Cliente->telefono),0,1,'');
 $pdf->MultiCell(72,4,'DIRECCION: '.utf8_decode($this->dato->Cliente->direccion),0,1,'');

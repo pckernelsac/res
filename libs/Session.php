@@ -2,27 +2,23 @@
 
 class Session
 {
-	
-	public static function init()
+	public static function init(): void
 	{
 		@session_start();
 	}
-	
-	public static function set($key, $value)
+
+	public static function set(string $key, mixed $value): void
 	{
 		$_SESSION[$key] = $value;
 	}
-	
-	public static function get($key)
+
+	public static function get(string $key): mixed
 	{
-		if (isset($_SESSION[$key]))
-		return $_SESSION[$key];
+		return $_SESSION[$key] ?? null;
 	}
-	
-	public static function destroy()
+
+	public static function destroy(): void
 	{
-		//unset($_SESSION);
 		session_destroy();
 	}
-	
 }

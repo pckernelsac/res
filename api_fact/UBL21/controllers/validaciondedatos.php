@@ -13,6 +13,7 @@ class Validaciondedatos {
 	}
 
 	public function replace_invalid_caracters($cadena) {
+	    $cadena = (string) ($cadena ?? '');
 	    $cadena = str_replace("'", "", $cadena);
 	    $cadena = str_replace("#", "", $cadena);
 	    $cadena = str_replace("$", "", $cadena);

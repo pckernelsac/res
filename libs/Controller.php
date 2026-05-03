@@ -1,22 +1,25 @@
 <?php
 
-class Controller {
+class Controller
+{
+	public View $view;
 
-	function __construct() {
-		//echo 'Main controller<br />';
+	public ?Model $model = null;
+
+	public function __construct()
+	{
 		$this->view = new View();
 	}
-	
-	public function loadModel($name) {
-		
-		$path = 'models/'.$name.'_model.php';
-		
+
+	public function loadModel(string $name): void
+	{
+		$path = 'models/' . $name . '_model.php';
+
 		if (file_exists($path)) {
-			require 'models/'.$name.'_model.php';
-			
+			require 'models/' . $name . '_model.php';
+
 			$modelName = $name . '_Model';
 			$this->model = new $modelName();
-		}		
+		}
 	}
-
 }
