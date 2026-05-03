@@ -13,8 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="theme-color" content="#444">
-    <meta name="msapplication-navbutton-color" content="#444">
+    <meta name="theme-color" content="#1e88e5">
+    <meta name="msapplication-navbutton-color" content="#1e88e5">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -40,7 +40,7 @@
     <!-- Custom CSS -->
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/style_all.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>public/css/colors/braintech.css" id="theme" rel="stylesheet">
+    <link href="<?php echo URL; ?>public/css/colors/blue.css" id="theme" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/app-shell-pro.css" rel="stylesheet">
     
     <!-- You can change the theme colors from here -->

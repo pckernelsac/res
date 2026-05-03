@@ -1,18 +1,20 @@
 /**
- * Shell profesional: header, sidebar y pie (carga después del tema).
- * Alcance: body#card1.app-shell — no afecta login sin sesión.
+ * Shell profesional: header, sidebar y pie (carga después del tema blue.css).
+ * Paleta alineada con Monster Admin blue: #1e88e5, #26c6da.
  */
 :root {
-	--shell-bg: #f4f6f9;
-	--shell-sidebar: #1a1f2e;
-	--shell-sidebar-hover: #252b3d;
-	--shell-sidebar-active: #21388b;
-	--shell-sidebar-text: rgba(255, 255, 255, 0.88);
-	--shell-sidebar-muted: rgba(255, 255, 255, 0.55);
-	--shell-header: #ffffff;
-	--shell-header-border: rgba(15, 23, 42, 0.08);
-	--shell-accent: #21388b;
-	--shell-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+	--shell-bg: #f0f4f8;
+	--shell-sidebar: #152a45;
+	--shell-sidebar-hover: #1c3554;
+	--shell-sidebar-active: #1e88e5;
+	--shell-sidebar-text: rgba(255, 255, 255, 0.9);
+	--shell-sidebar-muted: rgba(255, 255, 255, 0.58);
+	--shell-topbar: #1e88e5;
+	--shell-topbar-header: rgba(0, 0, 0, 0.1);
+	--shell-header-border: rgba(13, 71, 161, 0.2);
+	--shell-accent: #1e88e5;
+	--shell-accent-cyan: #26c6da;
+	--shell-shadow: 0 1px 3px rgba(21, 42, 69, 0.12);
 	--shell-radius: 10px;
 }
 
@@ -20,16 +22,16 @@ body#card1.app-shell {
 	background-color: var(--shell-bg);
 }
 
-/* ——— Topbar ——— */
+/* ——— Topbar (coherente con blue.css: barra azul, enlaces blancos) ——— */
 body#card1.app-shell .topbar {
-	background: var(--shell-header) !important;
+	background: var(--shell-topbar) !important;
 	box-shadow: var(--shell-shadow);
 	border-bottom: 1px solid var(--shell-header-border) !important;
 }
 
 body#card1.app-shell .topbar .navbar-header {
-	background: linear-gradient(135deg, #2c3142 0%, #1a1f2e 100%) !important;
-	border-right: 1px solid rgba(255, 255, 255, 0.06);
+	background: var(--shell-topbar-header) !important;
+	border-right: 1px solid rgba(255, 255, 255, 0.12);
 	min-height: 64px;
 	display: flex;
 	align-items: center;
@@ -57,12 +59,13 @@ body#card1.app-shell .topbar .navbar-nav .nav-link {
 	margin: 0 2px;
 	padding: 0.5rem 0.65rem !important;
 	transition: background 0.15s ease, color 0.15s ease;
+	color: #fff !important;
 }
 
 body#card1.app-shell .topbar .navbar-nav .nav-link:hover,
 body#card1.app-shell .topbar .navbar-nav .nav-link:focus {
-	background: rgba(33, 56, 139, 0.08) !important;
-	color: var(--shell-accent) !important;
+	background: rgba(255, 255, 255, 0.12) !important;
+	color: #fff !important;
 }
 
 body#card1.app-shell .topbar .navbar-nav .btn {
@@ -92,7 +95,7 @@ body#card1.app-shell .left-sidebar {
 }
 
 body#card1.app-shell .left-sidebar .user-profile {
-	background: linear-gradient(160deg, #21388b 0%, #1a1f2e 55%, #1a1f2e 100%) !important;
+	background: linear-gradient(160deg, #1e88e5 0%, #1565c0 45%, #152a45 100%) !important;
 	background-size: cover !important;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 	padding: 1.25rem 1rem 1rem;
@@ -145,9 +148,9 @@ body#card1.app-shell .sidebar-nav ul li a:focus {
 
 body#card1.app-shell .sidebar-nav ul li.active > a,
 body#card1.app-shell .sidebar-nav ul li > a.active {
-	background: rgba(33, 56, 139, 0.35) !important;
+	background: rgba(30, 136, 229, 0.35) !important;
 	color: #fff !important;
-	border-left: 3px solid #6b8cff;
+	border-left: 3px solid var(--shell-accent-cyan);
 	padding-left: calc(0.85rem - 3px) !important;
 }
 
@@ -238,7 +241,7 @@ body#card1.app-shell .container-fluid {
 .app-shell-footer-brand {
 	font-weight: 600;
 	font-size: 0.8125rem;
-	color: #334155;
+	color: #1565c0;
 	letter-spacing: 0.02em;
 }
 

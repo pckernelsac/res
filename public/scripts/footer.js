@@ -210,7 +210,8 @@ function mayusPrimera(string){
 
 function changeThemeColor() {
     var metaThemeColor = document.querySelector("meta[name=theme-color]");
-    metaThemeColor.setAttribute("content", "#444");
+    if (!metaThemeColor) return;
+    metaThemeColor.setAttribute("content", "#1e88e5");
     setTimeout(function() {
         changeThemeColor();
     }, 3000);
