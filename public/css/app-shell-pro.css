@@ -20,10 +20,65 @@
 
 body#card1.app-shell {
 	background-color: var(--shell-bg);
+	overflow-x: hidden;
+}
+
+/* No recortar header/footer ni desplegables del topbar */
+body#card1.app-shell #main-wrapper {
+	overflow: visible;
+}
+
+body#card1.app-shell .topbar .navbar.top-navbar {
+	flex-wrap: wrap;
+	align-items: center;
+	row-gap: 0.35rem;
+}
+
+body#card1.app-shell .topbar .navbar-collapse {
+	flex-grow: 1;
+	min-width: 0;
+	flex-basis: auto;
+}
+
+body#card1.app-shell .topbar .navbar-nav {
+	flex-wrap: wrap;
+	align-items: center;
+	row-gap: 0.25rem;
+}
+
+/* Sidebar: scroll nativo (sin slimScroll) para que Metis muestre submenús */
+body#card1.app-shell .left-sidebar > .scroll-sidebar,
+body#card1.app-shell .left-sidebar > .slimScrollDiv {
+	flex: 1 1 auto;
+	min-height: 0 !important;
+	height: auto !important;
+	max-height: none !important;
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+	-webkit-overflow-scrolling: touch;
+}
+
+body#card1.app-shell .left-sidebar > .slimScrollDiv > .scroll-sidebar {
+	overflow: visible !important;
+	height: auto !important;
+	max-height: none !important;
+}
+
+/* Submenús Metis / Bootstrap visibles */
+body#card1.app-shell .sidebar-nav ul ul.collapse,
+body#card1.app-shell .sidebar-nav ul ul.collapsing {
+	position: relative;
+}
+
+body#card1.app-shell .sidebar-nav ul ul.collapse.show,
+body#card1.app-shell .sidebar-nav ul ul.collapse.in {
+	display: block !important;
 }
 
 /* ——— Topbar (coherente con blue.css: barra azul, enlaces blancos) ——— */
 body#card1.app-shell .topbar {
+	position: relative;
+	z-index: 1030;
 	background: var(--shell-topbar) !important;
 	box-shadow: var(--shell-shadow);
 	border-bottom: 1px solid var(--shell-header-border) !important;
@@ -90,6 +145,11 @@ body#card1.app-shell .topbar .dropdown-menu {
 
 /* ——— Sidebar ——— */
 body#card1.app-shell .left-sidebar {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	max-height: 100vh;
+	box-sizing: border-box;
 	background: var(--shell-sidebar) !important;
 	box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
 }
@@ -127,7 +187,7 @@ body#card1.app-shell .left-sidebar .profile-text .dropdown-menu {
 
 body#card1.app-shell .sidebar-nav {
 	padding-top: 0.5rem;
-	padding-bottom: 3.5rem;
+	padding-bottom: 1.25rem;
 }
 
 body#card1.app-shell .sidebar-nav ul li a {
@@ -175,15 +235,21 @@ body#card1.app-shell .sidebar-nav ul ul li a {
 	margin: 0;
 	font-size: 0.85rem;
 	font-weight: 400;
-	color: var(--shell-sidebar-muted) !important;
+	color: rgba(255, 255, 255, 0.9) !important;
 }
 
 body#card1.app-shell .sidebar-nav ul ul li a:hover {
 	color: #fff !important;
-	background: transparent !important;
+	background: rgba(255, 255, 255, 0.06) !important;
 }
 
-body#card1.app-shell .sidebar-footer {
+body#card1.app-shell .left-sidebar .sidebar-footer {
+	position: relative;
+	flex-shrink: 0;
+	width: 100%;
+	left: auto;
+	bottom: auto;
+	z-index: 21;
 	background: rgba(0, 0, 0, 0.25);
 	border-top: 1px solid rgba(255, 255, 255, 0.06);
 	padding: 0.65rem;
@@ -226,7 +292,11 @@ body#card1.app-shell .container-fluid {
 }
 
 /* Pie de aplicación */
-.app-shell-footer {
+body#card1.app-shell .app-shell-footer {
+	position: relative;
+	z-index: 5;
+	width: 100%;
+	clear: both;
 	background: #fff;
 	border-top: 1px solid var(--shell-header-border);
 	box-shadow: 0 -2px 12px rgba(15, 23, 42, 0.04);

@@ -6,9 +6,19 @@ $(function() {
         i.stopPropagation()
     });
     var i = function() {
-        (window.innerWidth > 0 ? window.innerWidth : this.screen.width) < 4170 ? ($("body").addClass("mini-sidebar"), $(".navbar-brand span").hide(), $(".scroll-sidebar, .slimScrollDiv").css("overflow-x", "visible").parent().css("overflow", "visible"), $(".sidebartoggler i").addClass("ti-menu")) : ($("body").removeClass("mini-sidebar"), $(".navbar-brand span").show());
-        var i = (window.innerHeight > 0 ? window.innerHeight : this.screen.height) - 1;
-        (i -= 70) < 1 && (i = 1), i > 70 && $(".page-wrapper").css("min-height", i + "px")
+        var isAppShell = $("body").hasClass("app-shell");
+        if (!isAppShell) {
+            (window.innerWidth > 0 ? window.innerWidth : this.screen.width) < 4170 ? ($("body").addClass("mini-sidebar"), $(".navbar-brand span").hide(), $(".scroll-sidebar, .slimScrollDiv").css("overflow-x", "visible").parent().css("overflow", "visible"), $(".sidebartoggler i").addClass("ti-menu")) : ($("body").removeClass("mini-sidebar"), $(".navbar-brand span").show());
+        }
+        var h = (window.innerHeight > 0 ? window.innerHeight : this.screen.height) - 1;
+        (h -= 70) < 1 && (h = 1);
+        if (h > 70) {
+            if (!isAppShell) {
+                $(".page-wrapper").css("min-height", h + "px");
+            } else {
+                $(".page-wrapper").css("min-height", "");
+            }
+        }
     };
     $(window).ready(i), $(window).on("resize", i), $(".sidebartoggler").on("click", function() {
         $("body").hasClass("mini-sidebar") ? ($("body").trigger("resize"), $(".scroll-sidebar, .slimScrollDiv").css("overflow", "hidden").parent().css("overflow", "visible"), $("body").removeClass("mini-sidebar"), $(".navbar-brand span").show()) : ($("body").trigger("resize"), $(".scroll-sidebar, .slimScrollDiv").css("overflow-x", "visible").parent().css("overflow", "visible"), $("body").addClass("mini-sidebar"), $(".navbar-brand span").hide())
@@ -26,7 +36,7 @@ $(function() {
         $('[data-toggle="tooltip"]').tooltip()
     }), $(function() {
         $('[data-toggle="popover"]').popover()
-    }), $(".scroll-sidebar").slimScroll({
+    }), $("body").hasClass("app-shell") || $(".scroll-sidebar").slimScroll({
         position: "left",
         size: "5px",
         height: "100%",
