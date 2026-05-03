@@ -65,7 +65,6 @@ Global Styles
 
 body {
   background: #fff;
-  /* font-family: "Roboto", sans-serif; */
   font-family: "Poppins", sans-serif;
   margin: 0;
   overflow-x: hidden;
@@ -464,7 +463,7 @@ Text Colors
   color: #99abb4 !important; }
 
 .text-warning {
-  color: #ea5b5d !important; }
+  color: #21388B; !important; }
 
 .text-success {
   color: #34d16e !important; }
@@ -2409,7 +2408,7 @@ html body #visitor .c3-chart-arcs-title {
 .stylish-table tbody tr {
   border-left: 4px solid #ffffff; }
   .stylish-table tbody tr:hover, .stylish-table tbody tr.active {
-    border-left: 4px solid #ea5b5d !important;
+    border-left: 4px solid #21388B; !important;
     background: #ffabad0f  !important; }
 
 .stylish-table tbody td {
@@ -3759,9 +3758,9 @@ Vertical tabs
 .customvtab .tabs-vertical li .nav-link:focus {
   background: #ffffff;
   border: 0px;
-  border-right: 2px solid #ea5b5d;
+  border-right: 2px solid #21388B;
   margin-right: -1px;
-  color: #ea5b5d;
+  color: #21388B;
   font-weight: 400; }
 
 .tabcontent-border {
@@ -5571,15 +5570,13 @@ When click on sidebar toggler and also for tablet
 *****************/
 @media (min-width: 768px) {
   .mini-sidebar .sidebar-nav #sidebarnav li {
-    position: relative; 
-    }
+    position: relative; }
   .mini-sidebar .sidebar-nav #sidebarnav > li > ul {
     position: absolute;
     left: 60px;
-    top: 40px;
+    top: 45px;
     width: 200px;
     z-index: 1001;
-    /* background: var(--insaga-gris-alt); */
     background: #f2f6f8;
     display: none;
     padding-left: 1px; }
@@ -5627,14 +5624,12 @@ When click on sidebar toggler and also for tablet
   .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a {
     width: 260px;
     /*COLOR DE MENU SLIDER*/
-    /* background: var(--insaga-default); */
-    background: #666;
+    background: #21388B;
     color: #ffffff;
     -webkit-transition: none !important;
     -o-transition: none !important;
     transition: none !important;
-    border-color: #009efb; 
-    z-index: 99999;}
+    border-color: #009efb; }
     .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a i {
       color: #ffffff; }
     .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a .hide-menu {
@@ -7331,8 +7326,7 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
   -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  /* border: none;  */
-}
+  border: none; }
 
 .well, pre {
   -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
