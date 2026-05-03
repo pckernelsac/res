@@ -23,12 +23,12 @@ define('HASH_PASSWORD_KEY', getenv('HASH_PASSWORD_KEY') ?: 'catsFLYhigh2000miles
 
 // database
 define('DB_TYPE', 'mysql');
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_PORT', getenv('DB_PORT') ?: '3306');
-define('DB_NAME', getenv('DB_NAME') ?: 'restaurante');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: '');
-define('DB_CHARSET', getenv('DB_CHARSET') ?: 'utf8');
+define('DB_HOST', 'restaurante_bdrestaurante');
+define('DB_PORT', '3306');
+define('DB_NAME', 'restaurante');
+define('DB_USER', 'mysql');
+define('DB_PASS', '04n91zbe1866pdh1syme');
+define('DB_CHARSET', 'utf8');
 
 // URL pública con barra final (obligatoria en producción: APP_URL=https://tudominio.com/)
 $appUrl = getenv('APP_URL');
