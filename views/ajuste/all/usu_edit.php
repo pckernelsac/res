@@ -43,7 +43,7 @@
                         <div class="row floating-labels m-t-40">
                             <div class="col-md-6">
                                 <div class="form-group ent m-b-40">
-                                    <input type="text" class="form-control" name="dni" id="dni" value="<?php echo $r = (isset($this->usuario['dni'])) ? $this->usuario['dni'] : ''; ?>" autocomplete="off" minlength="<?php echo (string) (Session::get('diCar') ?? ''); ?>" maxlength="<?php echo (string) (Session::get('diCar') ?? ''); ?>" required="required"/>
+                                    <input type="text" class="form-control" name="dni" id="dni" value="<?php echo $r = (isset($this->usuario['dni'])) ? $this->usuario['dni'] : ''; ?>" autocomplete="off" minlength="<?php echo Session::get('diCar'); ?>" maxlength="<?php echo Session::get('diCar'); ?>" required="required"/>
                                     <span class="bar"></span>
                                     <label for="dni" class="c-dni"><?php echo Session::get('diAcr'); ?></label>
                                 </div>

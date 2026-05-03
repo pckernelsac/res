@@ -1,45 +1,72 @@
-<?php if (isset($_GET['pc'])) {
-	Session::set('host_pc', 'PC0' . preg_replace('/\D/', '', (string) $_GET['pc']));
-} ?>
-<link rel="stylesheet" href="<?php echo URL; ?>public/css/auth-portal.css">
-<div class="auth-page-root">
-	<div class="auth-shell">
-		<div class="auth-hero" style="background-image:url(<?php echo URL; ?>public/images/background/bg.jpg);">
-			<div class="auth-hero-inner">
-				<a href="javascript:void(0)" class="auth-logo" aria-hidden="true">
-					<img src="<?php echo URL; ?>public/images/logo-white.png" alt="<?php echo htmlspecialchars(NAME_NEGOCIO, ENT_QUOTES, 'UTF-8'); ?>">
-				</a>
-				<h1><?php echo htmlspecialchars(NAME_NEGOCIO, ENT_QUOTES, 'UTF-8'); ?> <strong>Restaurante</strong></h1>
-				<p class="auth-tagline">Control de ventas, caja y operación en un solo lugar. Diseñado para equipos que exigen claridad y velocidad.</p>
-				<span class="auth-version">Versión 2.1</span>
-			</div>
-		</div>
-		<div class="auth-main">
-			<div class="auth-main-inner">
-				<div class="auth-mode-switch">
-					<a class="btn btn-outline-primary btn-lg btn-block mb-3" href="<?php echo URL; ?>multimozo">
-						<i class="fas fa-tablet-alt mr-1" aria-hidden="true"></i> Acceso multi mozo
-					</a>
-				</div>
-				<div class="auth-card">
-					<div class="auth-card-body">
-						<h2>Bienvenido</h2>
-						<p class="auth-lead mb-0">Ingrese sus credenciales para continuar.</p>
-						<form class="mt-4 pt-1" id="frm-login" role="form" method="post" autocomplete="on">
-							<div class="form-floating mb-3">
-								<input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" autocomplete="username">
-								<label for="usuario">Usuario</label>
-							</div>
-							<div class="form-floating mb-3">
-								<input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" autocomplete="current-password">
-								<label for="password">Contrase&ntilde;a</label>
-							</div>
-							<button type="submit" class="btn auth-btn-primary">Entrar al sistema</button>
-						</form>
-						<p class="auth-footnote mb-0">Si olvid&oacute; su contrase&ntilde;a, contacte al administrador.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<?php if(isset($_GET["pc"])){Session::set('host_pc', 'PC0'.$_GET["pc"]);} ?>
+<div id="wrapper-1" style="display: block;">
+    <link href="<?php echo URL; ?>public/css/style.min.css" id="theme" rel="stylesheet">
+    <div class="row auth-wrapper gx-0">
+        <div class="col-lg-4 col-xl-3 bg-info auth-box-2 on-sidebar" style="background-image:url(<?php echo URL; ?>public/images/background/bg.jpg);">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-7 col-lg-12 col-xl-9">
+                        <a href="javascript:void(0)" class="text-center db"><img src="<?php echo URL; ?>public/images/logo-white.png" width='60%' /></a>
+                        <h2 class="text-white mt-4 fw-light">SISTEMA<span class="font-weight-medium text-warning"> RESTAURANTE</span></h2>
+                        <h5 class="text-white mt-0 fw-light">Versi&oacute;n 2.1</h5>
+                        <p class="op-5 text-white fs-4 mt-4">Gesti&oacute;n realmente f&aacute;cil para hacer crecer tu negocio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-xl-9 d-flex align-items-center justify-content-center">
+            <div class="row justify-content-center w-100 mt-1 mt-lg-0">
+                <div class="col-lg-6 col-xl-3 col-md-7">
+                    <div class="px-2 my-4" >
+                        <a class="btn btn-primary btn-lg btn-block" href="<?php echo URL; ?>multimozo">Multi Mozo</a>
+                    </div>
+                    <div class="card" id="loginform">
+                        <div class="card-body">
+                            <h3>Bienvenido!</h3>
+                            <p class="text-muted fs-4">Ingrese sus datos de acceso</p>
+                            <form class="form-horizontal mt-4 pt-4" id="frm-login" role="form" method="post">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control form-input-bg" name="usuario" id="usuario" placeholder="Usuario" autocomplete="off">
+                                    <label for="usuario">Usuario</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control form-input-bg" name="password" id="password" placeholder="*****" autocomplete="off">
+                                    <label for="password">Contrase&ntilde;a</label>
+                                </div>
+                                <div class="d-flex align-items-stretch button-group mt-4 pt-2">
+                                    <button type="submit" class="btn btn-warning btn-block btn-lg px-4">Continuar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<style>
+.text-warning {
+    color: #21388B; !important;
+}
+.btn-warning {
+    color: #fff !important;
+    background-color: #21388B; !important;
+    border-color: #21388B; !important;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 15%);
+}
+.btn-warning:hover, .btn-warning.disabled:hover {
+    background: #21388B; !important;
+    color: #ffffff !important;
+    -webkit-box-shadow: 0 14px 26px -12px rgb(234 91 93 / 42%), 0 4px 23px 0 rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(234 91 93 / 20%);
+    box-shadow: 0 14px 26px -12px rgb(234 91 93 / 42%), 0 4px 23px 0 rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(234 91 93 / 20%);
+    border: 1px solid #21388B; !important;
+}
+@media (max-width: 767px) {
+
+    .auth-wrapper .auth-box-2 {
+    padding: 15px 25px 0px 25px;
+}
+}
+
+
+</style>

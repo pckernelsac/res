@@ -40,8 +40,8 @@
     <div class="col-lg-4 u4">
         <div class="card m-b-0">
             <div class="card-body p-b-0">
-                <div class="d-flex flex-wrap align-items-start">
-                    <div class="flex-grow-1 pr-2" style="min-width:0;">
+                <div class="d-flex flex-wrap0">
+                    <div>
                         <h4 class="card-title">
                             <span class="pedido-numero-icono"></span>
                             <span class="pedido-numero font-medium text-warning"></span>
@@ -51,10 +51,11 @@
                             <span class="pedido-cliente font-medium text-success"></span>
                         </h5>
                     </div>
-                    <div class="ml-auto align-self-center bc flex-shrink-0" style="display: none;">
-                        <button type="button" class="btn btn-primary" id="btn-confirmar">CONFIRMAR</button>
+                    <div class="ml-auto align-self-center bc" style="display: none;">
+                        <input type="hidden" name="codped" id="codped" value="<?php echo Session::get('codped'); ?>"/>
+                        <button class="btn btn-primary" id="btn-confirmar">CONFIRMAR</button>
                     </div>
-                    <div class="ml-auto align-self-center btn-imp flex-shrink-0"></div>
+                    <div class="ml-auto align-self-center btn-imp"></div>
                 </div>
                 <input type="hidden" id="nombre_salon" value="" />
                 <input type="hidden" id="nombre_mozo" value="" />

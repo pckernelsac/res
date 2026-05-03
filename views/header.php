@@ -3,7 +3,7 @@
 // opc_02: ver stock de pollo
 // opc_03: imprimir ticket en mesa
 
-  $_SESSION["zona_horaria"] = Session::get('zona_hor') ?? '';
+  $_SESSION["zona_horaria"] = Session::get('zona_hor');
 ?>
 <!doctype html>
 <html>
@@ -13,8 +13,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="theme-color" content="#21388B">
-    <meta name="msapplication-navbutton-color" content="#21388B">
+    <meta name="theme-color" content="#444">
+    <meta name="msapplication-navbutton-color" content="#444">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -40,8 +40,7 @@
     <!-- Custom CSS -->
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
     <link href="<?php echo URL; ?>public/css/style_all.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>public/css/colors/insaga.css" id="theme" rel="stylesheet">
-    <link href="<?php echo URL; ?>public/css/app-shell-pro.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>public/css/colors/braintech.css" id="theme" rel="stylesheet">
     
     <!-- You can change the theme colors from here -->
     <link href="<?php echo URL; ?>public/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
@@ -61,7 +60,7 @@
 
 <?php Session::init(); ?>
 <?php if (Session::get('loggedIn') == true):?>
-<body class="fix-header fix-sidebar card-no-border app-shell" id="card1">
+<body class="fix-header fix-sidebar card-no-border" id="card1">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -77,7 +76,7 @@
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
         
-        <header class="topbar app-shell-topbar" style="width: 100% !important;">
+        <header class="topbar" style="width: 100% !important;">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- ============================================================== -->
                 <!-- Logo -->
@@ -172,10 +171,9 @@
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- User profile -->
-                <div class="user-profile app-shell-user-profile">
+                <div class="user-profile" style="background: url(<?php echo URL; ?>public/images/background/user-info.jpg) no-repeat;">
                     <!-- User profile image -->
-                    <?php $shellAvatar = (string)(Session::get('imagen') ?? ''); if ($shellAvatar === '') { $shellAvatar = 'default-avatar.png'; } ?>
-                    <div class="profile-img"> <img src="<?php echo URL; ?>public/images/users/<?php echo htmlspecialchars($shellAvatar, ENT_QUOTES, 'UTF-8'); ?>" alt="" /> </div>
+                    <div class="profile-img"> <img src="<?php echo URL; ?>public/images/users/<?php echo Session::get('imagen'); ?>" alt="user" /> </div>
                     <!-- User profile text-->
                     <div class="profile-text"> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><?php echo Session::get('nombres'); ?></a>
                         <div class="dropdown-menu animated flipInY"> 

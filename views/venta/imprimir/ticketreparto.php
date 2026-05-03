@@ -42,9 +42,9 @@ $pdf->Cell(72,4,'ENTREGA: '.date('d-m-Y h:i A',strtotime($this->dato->fec_ven)),
 
 $pdf->MultiCell(72,4,'CLIENTE: '.utf8_decode($this->dato->Cliente->nombre),0,1,'');
 if($this->dato->Cliente->tipo_cliente == 1){
-$pdf->Cell(72,4,utf8_decode((string) (Session::get('diAcr') ?? '')).': '.utf8_decode($this->dato->Cliente->dni),0,1,'');
+$pdf->Cell(72,4,utf8_decode(Session::get('diAcr')).': '.utf8_decode($this->dato->Cliente->dni),0,1,'');
 }else{
-$pdf->Cell(72,4,utf8_decode((string) (Session::get('tribAcr') ?? '')).': '.utf8_decode($this->dato->Cliente->ruc),0,1,'');
+$pdf->Cell(72,4,utf8_decode(Session::get('tribAcr')).': '.utf8_decode($this->dato->Cliente->ruc),0,1,'');
 }
 $pdf->MultiCell(72,4,'TELEFONO: '.utf8_decode($this->dato->Cliente->telefono),0,1,'');
 $pdf->MultiCell(72,4,'DIRECCION: '.utf8_decode($this->dato->Cliente->direccion),0,1,'');
